@@ -5,18 +5,18 @@ import "./css/home.css"
 
 const Home = () => {
 
-    var usuario = document.getElementById("user") as HTMLInputElement;
-    var pass = document.getElementById("pswd") as HTMLInputElement;
+    //var usuario = document.getElementById("user") as HTMLInputElement;
+    //var pass = document.getElementById("pswd") as HTMLInputElement;
     //var ok = document.getElementById("submit");
 
-    const usr = usuario?.value
-    const pswd = pass?.value;
+    //const usr = usuario?.value
+    //const pswd = pass?.value;
 
-    var Usr = usr;
-    var psw = pswd;
+    //var Usr = usr;
+    //var psw = pswd;
 
     //ok?.addEventListener('click', verificacion)
-
+ /*
     function verificacion() {
         if (Usr == 'adm' && psw == 'ADM') {
             usuario.value = "";
@@ -29,7 +29,7 @@ const Home = () => {
         }
 
 
-        /*
+       
         if (usr == "Admin" && pswd == "admin") {
             console.log("funciona")
         }
@@ -38,7 +38,6 @@ const Home = () => {
         }
         */
 
-    }
     //verificacion(){
     //    if ( usuario == usr && pass == pswd)
 
@@ -93,7 +92,7 @@ const Home = () => {
                                     <input type="password" id="pswd" className="form-control form-control-sm" />
                                 </div>
 
-                                <button id="submit" onClick={verificacion} className="btn btn-primary btn-block">
+                                <button id="submit"  className="btn btn-primary btn-block">
                                     Acceder
                                 </button>
 

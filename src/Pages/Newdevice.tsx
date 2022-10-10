@@ -1,11 +1,11 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { WebSocket } from "ws";
-import { connec, messages } from "../services/server"
+//import { connec, messages } from "../services/server"
 import useWebSocket, { ReadyState } from 'react-use-websocket';
 
 const NewDevice = () => {
 
-
+/*
 
 
     var devport = document.getElementById("port") as HTMLInputElement;
@@ -34,7 +34,7 @@ const NewDevice = () => {
     function savedata() {
 
     }
-
+*/
     return (
         <body>
             <header>

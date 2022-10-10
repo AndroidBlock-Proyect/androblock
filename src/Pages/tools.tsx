@@ -1,13 +1,13 @@
 import { connect } from "http2";
 import React from "react";
-import { conectdevice, connec, closeconnection, blockdevice, } from "../services/server";
+//import { conectdevice, connec, closeconnection, blockdevice, } from "../services/server";
 
 const Tools = () => {
-
+/*
     function discconect() {
         closeconnection();
     }
-/*
+
     async function conectdev()``: Promise<void> {
         //aqui va la funcion para esperar la connexion al cliente
         connec(port);
