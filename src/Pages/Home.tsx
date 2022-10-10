@@ -2,27 +2,69 @@ import React from "react";
 import "./css/home.css"
 
 
-const Home = () => {
-    return(
-        
+
+export default function Home() {
+
+    var usuario = document.getElementById("user") as HTMLInputElement;
+    var pass = document.getElementById("pswd") as HTMLInputElement;
+    //var ok = document.getElementById("submit");
+
+    const usr = usuario?.value
+    const pswd = pass?.value;
+
+    var Usr = usr;
+    var psw = pswd;
+
+    //ok?.addEventListener('click', verificacion)
+
+    function verificacion() {
+        if (Usr == 'adm' && psw == 'ADM') {
+            usuario.value = "";
+            pass.value = ""
+
+            alert(Usr + psw);
+
+        } else {
+            alert("no funciona");
+        }
+
+
+        /*
+        if (usr == "Admin" && pswd == "admin") {
+            console.log("funciona")
+        }
+        else {
+            console.log(usr, pswd)
+        }
+        */
+
+    }
+    //verificacion(){
+    //    if ( usuario == usr && pass == pswd)
+
+    //}
+
+
+    return (
+
         <div>
 
             <header>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-                <section className= "textosheader">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+                <section className="textosheader">
                     <div className="textosheader">
                         <h1>
                             AndroidBlock📵
                         </h1>
-                        <br/>
+                        <br />
                         <img src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
                     </div>
                 </section>
             </header>
 
             <body>
-                
+
                 <div className="global-container">
                     <div className="card login-form">
                         <div className="card-body">
@@ -32,18 +74,18 @@ const Home = () => {
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="exampleInputUser1">Usuario</label>
-                                    <input type="user" className="form-control form-control-sm" id="exampleInputUser1" />
+                                    <input type="user" id="user" className="form-control form-control-sm" />
                                 </div>
 
                                 <div className="form-group">
                                     <label htmlFor="exampleInputPassword1">Contraseña</label>
-                                    <input type="password" className="form-control form-control-sm" id="exampleInputPassword1" />
+                                    <input type="password" id="pswd" className="form-control form-control-sm" />
                                 </div>
 
-                                <button type="submit" className="btn btn-primary btn-block">
+                                <button id="submit" onClick={verificacion} className="btn btn-primary btn-block">
                                     Acceder
                                 </button>
-                                
+
                             </form>
                         </div>
                     </div>
@@ -55,4 +97,3 @@ const Home = () => {
         </div>
     )
 }
-export default Home;
