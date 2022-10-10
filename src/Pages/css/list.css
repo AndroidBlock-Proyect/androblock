@@ -1,0 +1,16 @@
+.list-container{
+    margin-left: 30%;
+}
+
+.device-form{
+    align-items: center;
+    padding-top: 4%;
+    color: #0b57bb;
+    border-radius: 10px !important;
+    margin-right: -20%;
+    width: 500px;
+    height: 500px;
+}
+
+
+

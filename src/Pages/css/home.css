@@ -2,16 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 13px;
+    font-size: 14px;
 }
 
-h1{
-    font-family:Arial, Helvetica, sans-serif;
-}
 
 body{
-    font-family: "Roboto", sans-serif;
+    background: #303235 !important;
 }
+
 
 nav{
     text-align: right;
@@ -38,6 +36,8 @@ header .textosheader{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
 }
 
 img{
@@ -61,10 +61,6 @@ img{
     color: #0b57bb;
 }
 
-.form-group{
-    padding-left: 5%;
-    padding-right: 5%;
-}
 
 .login-form{
     width: 300px;
@@ -72,6 +68,8 @@ img{
     margin: 2%;
     background: #000000 !important;
     border-radius: 10px !important;
+    padding-right: 2%;
+    padding-left: 2%;
 }
 
 input[type="user"], 
@@ -91,14 +89,15 @@ input[type="password"]:focus{
 }
 
 .card-title{
-    font-weight: 900;
+    font-weight: 600;
     padding-top: 20px;
 }
 
 .btn{
     background: #0b57bb;
-    margin-top: 24%;
-    font-size: 14px;
+    margin-top: 12%;
+    margin-bottom: 50%;
+    font-size: 10px;
     transform: translateY(10px);
     border-radius: 10px !important;
 }

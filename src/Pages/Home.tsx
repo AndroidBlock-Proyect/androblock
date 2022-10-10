@@ -3,7 +3,7 @@ import "./css/home.css"
 
 
 
-export default function Home() {
+const Home = () => {
 
     var usuario = document.getElementById("user") as HTMLInputElement;
     var pass = document.getElementById("pswd") as HTMLInputElement;
@@ -52,13 +52,24 @@ export default function Home() {
             <header>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-                <section className="textosheader">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+            <nav>
+                <a href="/Devicelist">Dispositivos</a>
+                <a href="/tools">Herramientas</a>
+                <a href="/Newdevice">Nuevo Disposivo</a>
+            </nav>
+            <br />
+                <section className= "textosheader">
                     <div className="textosheader">
+                    <img src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
+                    <br/>
+                    <br/>
                         <h1>
                             AndroidBlock📵
                         </h1>
                         <br />
                         <img src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
+                        <br/>
                     </div>
                 </section>
             </header>
@@ -97,3 +108,4 @@ export default function Home() {
         </div>
     )
 }
+export default Home;
