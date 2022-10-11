@@ -8,6 +8,7 @@ import NewDevice from './Pages/Newdevice'
 import DeviceList from './Pages/Devicelist'
 import Tools from './Pages/tools'
 
+
 function App() {
 
   //aqui vamos a hacer la funcion para guardar en un archivo de txt en la siguinte carpeta %appdata%/androblock/pdata 
