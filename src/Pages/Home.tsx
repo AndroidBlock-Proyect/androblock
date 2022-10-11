@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Router } from "react-router-dom";
 
 
+
 export default function Home() {
 
     var usuario = document.getElementById("user") as HTMLInputElement;
@@ -70,7 +71,7 @@ export default function Home() {
                                     <input type="password" id="pswd" className="form-control form-control-sm" />
                                 </div>
 
-                                <button id="submit" className="btn btn-primary btn-block">
+                                <button id="submit" className="btn btn-primary btn-block" onClick={verificacion}>
                                     Acceder
                                 </button>
 
