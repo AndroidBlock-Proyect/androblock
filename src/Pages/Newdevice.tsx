@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { WebSocket } from "ws";
 import { connec, messages } from "../services/server"
-import useWebSocket, { ReadyState } from 'react-use-websocket';
 import { setport } from './res/imports';
 
 const NewDevice = () => {
