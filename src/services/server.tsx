@@ -1,39 +1,40 @@
-import { info } from "console";
-import { Socket } from "dgram";
-import { connect } from "http2";
-import { Server } from "socket.io";
+import { useCallback } from "react";
+import { WebSocketServer } from "ws";
+import { setport } from "../Pages/res/imports";
 
-const io = new Server();
+//var port: number = parseInt(setport, 10);
+
+const ws = new WebSocketServer();
 
 
-export function connec(port: any) {
-  io.on("connection", (Socket) => {
-    console.log('estoy funcionando')
-    io.emit("el dispositivo:" + port + "se ha conectado correctamente")
-    //con = true;
-  });
-  io.listen(port);
-}
-
-export function messages(msg: any) {
-  io.on("connection", (Socket) => {
-    io.emit("hello", "world", "i'm:" + msg);
-    console.log("hello", "world", "i'm:" + msg);
+export function connec() {
+  ws.on('connection', (ws) => {
+    ws.on('message', (data) => {
+      console.log('recbiendo mensaje del cliente :' + data);
+    })
   })
 }
 
-export function conectdevice() {
-  io.socketsJoin("payzone");
+export function messages(msg: any) {
+  ws.on('connection', (ws) => {
+    ws.send('klk te habla el servidor! 👌');
+  });
 }
 
 export function closeconnection() {
-  io.disconnectSockets();
 
 }
+
+/*
+export function conectdevice() {
+
+}
+
+
 
 export function blockdevice() {
   io.on("connection", (Socket) => {
     io.emit("send the block command");
   })
 }
-
+*/
