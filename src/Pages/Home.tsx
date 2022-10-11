@@ -39,20 +39,15 @@ export default function Home() {
             <header>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-            <nav>
-                <a href="/Devicelist">Dispositivos</a>
-                <a href="/tools">Herramientas</a>
-                <a href="/Newdevice">Nuevo Disposivo</a>
-            </nav>
-            <br />
-                <section className= "textosheader">
+                <br />
+                <section className="textosheader">
                     <div className="textosheader">
                         <h1>
                             AndroidBlock📵
                         </h1>
                         <br />
                         <img src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
-                        <br/>
+                        <br />
                     </div>
                 </section>
             </header>
@@ -75,7 +70,7 @@ export default function Home() {
                                     <input type="password" id="pswd" className="form-control form-control-sm" />
                                 </div>
 
-                                <button id="submit"  className="btn btn-primary btn-block">
+                                <button id="submit" className="btn btn-primary btn-block">
                                     Acceder
                                 </button>
 
