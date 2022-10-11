@@ -1,25 +1,26 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { WebSocket } from "ws";
-import "./css/new.css"
-//import { connec, messages } from "../services/server"
-
+import { connec, messages } from "../services/server"
+import useWebSocket, { ReadyState } from 'react-use-websocket';
+import { setport } from './res/imports';
 
 const NewDevice = () => {
 
-/*
-
 
     var devport = document.getElementById("port") as HTMLInputElement;
-    var msg;
+    var msg = "New device connected to port " + devport?.value;
     var duration;
 
+    //var port: number = parseInt(devport?.value, 10);
+
     function conect() {
-        var port = devport?.value;
-        connec(port);
-        messages(port);
+        console.log("Connected to port " + devport?.value);
+        setport(devport?.value);
+        //connec();
+        //messages(msg);
         //tempalert("conectando", 5000);
     }
-
+    /*
     //alert to show connecting 
     function tempalert(msg: string | undefined, duration: number | undefined) {
         var el = document.getElementById("div");
@@ -29,13 +30,15 @@ const NewDevice = () => {
         }, duration);
         //document.body.appendChild(el)
     }
-
+ 
     //funcion para enviar los datos del telefono al archivo .androblock
-
+ 
     function savedata() {
-
+ 
     }
-*/
+    
+    */
+
     return (
 
         <div>

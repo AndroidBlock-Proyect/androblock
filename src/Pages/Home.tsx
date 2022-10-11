@@ -1,9 +1,36 @@
 import React from "react";
 import "./css/home.css"
+import DeviceList from "./Devicelist";
+import { useNavigate } from "react-router-dom";
+import { Router } from "react-router-dom";
 
 
+export default function Home() {
 
-const Home = () => {
+    var usuario = document.getElementById("user") as HTMLInputElement;
+    var pass = document.getElementById("pswd") as HTMLInputElement;
+    var ok = document.getElementById("submit");
+
+    const password = pass?.value;
+    const usr = usuario?.value;
+
+    let navigate = useNavigate();
+    const handleBack = () => {
+        navigate('devicelist');
+    };
+
+    //ok?.addEventListener('click', verificacion)
+
+    function verificacion() {
+        if (usuario?.value === usr && pass?.value === usr) {
+            handleBack();
+        }
+
+        else {
+            alert("no funciona" + usuario?.value + pass?.value);
+        }
+    }
+
 
     return (
 
@@ -63,4 +90,3 @@ const Home = () => {
         </div>
     )
 }
-export default Home;
