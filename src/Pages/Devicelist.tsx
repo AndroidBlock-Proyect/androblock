@@ -3,15 +3,14 @@ import React, { useEffect, useState } from "react";
 import "./css/list.css"
 
 const DeviceList = () => {
-   /* const [data, setdata] = useState([]);
-
-    useEffect(() => {
-        const ls = localStorage.getItem("devicedata");
-        const data = JSON.parse("ls");
-        if (data) {
-            setdata(data);
+  /*  var i = 0;
+    var list  = localStorage.getItem("devicedata");
+    function getDeviceList() {
+        var x =  document.getElementById('id') as HTMLInputElement | null;
+        for (var i = 0; i < 10; i++){
+            x?.setAttribute = list[i];
         }
-    }, []);
+    }
 */
     return (
 
@@ -45,6 +44,7 @@ const DeviceList = () => {
                             <div className="container-list-1">
                                 <input type="checkbox" className="casilla" />
                                 <p className="actividad">Equipos</p>
+                                <a id="id"></a>
                             </div>
                         </div>
                     </div>
@@ -57,3 +57,15 @@ const DeviceList = () => {
 }
 
 export default DeviceList;
+
+
+/* const [data, setdata] = useState([]);
+
+ useEffect(() => {
+     const ls = localStorage.getItem("devicedata");
+     const data = JSON.parse("ls");
+     if (data) {
+         setdata(data);
+     }
+ }, []);
+*/
