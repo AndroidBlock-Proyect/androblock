@@ -70,7 +70,6 @@ export default function Home() {
                                     <label htmlFor="exampleInputPassword1">Contraseña</label>
                                     <input type="password" id="pswd" className="form-control form-control-sm" />
                                 </div>
-
                                 <button id="submit" className="btn btn-primary btn-block" onClick={verificacion}>
                                     Acceder
                                 </button>
