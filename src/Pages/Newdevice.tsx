@@ -2,6 +2,8 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { WebSocket } from "ws";
 import { connec, messages } from "../services/server"
 import { setport } from './res/imports';
+import "./css/new.css"
+
 
 const NewDevice = () => {
 
