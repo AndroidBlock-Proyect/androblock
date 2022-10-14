@@ -15,10 +15,10 @@ const NewDevice = () => {
     var msg = "New device connected to port " + devport?.value;
     var duration;
 
-    localStorage.setItem("port:", devport?.value);
+    localStorage.setItem("devicedata", JSON.stringify("port:" + devport?.value + ";" + "cliente:" + cliente?.value + ";"));
 
     function test() {
-        alert("port" + localStorage.getItem("port"));
+        alert("port" + localStorage.getItem("devicedata"));
     }
 
     //var port: number = parseInt(devport?.value, 10);
