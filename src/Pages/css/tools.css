@@ -5,19 +5,14 @@
 	--prueba: (180deg,#21c8f6,#637bff);
 }
 
-.banner-icon{
-    border-radius: 2%;
-}
 
 .background1-left-column{
 	background: linear-gradient(180deg,#0a7fa0,#1a38e4);
 }
 
-
 .background2-left-column{
 	background: linear-gradient(180deg ,#6edcc4,#1aab8b);
 }
-
 
 * {
 	padding: 0;
