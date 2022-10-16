@@ -19,19 +19,20 @@ const DeviceList = () => {
             <header>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-                <nav>
+                <nav className="navbar">
                     <a href="/">Home</a>
                     <a href="/tools">Herramientas</a>
-                    <a href="/Newdevice">Nuevo Disposivo</a>
+                    <a href="/Newdevice">Nuevo Dispositivo</a>
                 </nav>
+                <br />
                 <br />
                 <section className="textosheader">
                     <div className="textosheader">
-                        <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
-                        <br />
-                        <br />
                         <h1>AndroidBlock📵</h1>
+                        <br />
+                        <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
                     </div>
+                    <br />
                 </section>
             </header>
 

@@ -11,25 +11,29 @@
 
 
 body{
-    background: #303235 !important;
+    background: #071529 !important;
 }
 
 
-nav{
-    text-align: right;
-    padding: 30px 50px 0 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.navbar {
+	background: #ffff;
 }
 
-nav > a{
-    color:rgb(10, 106, 202);
-    font-weight: 300;
-    text-decoration: none;
-    margin-right: 20px;
+.navbar a {
+	color: #fff;
+	display: inline-block;
+	padding: 20px;
+	width: 30%;
+    border-radius: 5px;
+	text-align: center;
+	color: #000;
+	transition: .3s ease-out all;
 }
 
-nav > a:hover{
-    text-decoration: underline;
+.navbar a:hover {
+	background: #123668;
+	color: #fff;
+	text-decoration: none;
 }
 
 header .textosheader{

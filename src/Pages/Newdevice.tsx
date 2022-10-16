@@ -55,11 +55,12 @@ const NewDevice = () => {
             <header>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-                <nav>
+                <nav className="navbar">
                     <a href="/">Home</a>
                     <a href="/Devicelist">Dispositivos</a>
                     <a href="/tools">Herramientas</a>
                 </nav>
+                <br />
                 <br />
                 <section className="textosheader">
                     <div className="textosheader">
@@ -67,12 +68,12 @@ const NewDevice = () => {
                             AndroidBlock📵
                         </h1>
                         <br />
+                        <br />
                         <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
                         <br />
                     </div>
                 </section>
             </header>
-            <br />
 
             <body>
 
@@ -80,7 +81,7 @@ const NewDevice = () => {
                     <h4 className="titulo">Nuevo Dispositivo</h4>
                     <br />
                     <div className="container-input">
-                        <input type="text" className="input" id="client" placeholder="Nombre Cliente" />
+                        <input type="text" className="input" id="client" placeholder="Nombre Usuario" />
                         <input type="text" className="input" id="port" placeholder="Puerto" />
                     </div>
                     <br />
