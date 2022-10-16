@@ -12,13 +12,30 @@ const NewDevice = () => {
     var cliente = document.getElementById("client") as HTMLInputElement;
     //var agregar = document.getElementById("agregar");
 
+    var testresult = false;
+
     var msg = "New device connected to port " + devport?.value;
     var duration;
 
-    localStorage.setItem("devicedata", JSON.stringify("port:" + devport?.value + ";" + "cliente:" + cliente?.value + ";"));
+    var client = cliente?.value;
+
+    function agregar() {
+        localStorage.setItem(client, JSON.stringify(devport?.value));
+    }
 
     function test() {
-        alert("port" + localStorage.getItem("devicedata"));
+        do {
+            try {
+                //aqui va el codigo para probar la coneccion del dispositivo y el  programa 
+                //alert(cliente?.value + " connected to port " + localStorage.getItem(cliente?.value));
+            }
+            catch (e) {
+                console.log(e);
+            }
+        }
+        while (testresult == true) {
+            agregar();
+        }
     }
 
     //var port: number = parseInt(devport?.value, 10);
