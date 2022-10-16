@@ -47,7 +47,7 @@ export default function Home() {
                             AndroidBlock📵
                         </h1>
                         <br />
-                        <img src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
+                        <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
                         <br />
                     </div>
                 </section>

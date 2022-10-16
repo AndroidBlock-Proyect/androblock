@@ -66,7 +66,7 @@ const DeviceList = () => {
                 <br />
                 <section className="textosheader">
                     <div className="textosheader">
-                        <img src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
+                        <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
                         <br />
                         <br />
                         <h1>AndroidBlock📵</h1>

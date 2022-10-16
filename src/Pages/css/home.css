@@ -5,6 +5,10 @@
     font-size: 14px;
 }
 
+.banner-icon{
+    border-radius: 2%;
+}
+
 
 body{
     background: #303235 !important;

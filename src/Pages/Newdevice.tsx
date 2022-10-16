@@ -84,7 +84,7 @@ const NewDevice = () => {
                             AndroidBlock📵
                         </h1>
                         <br />
-                        <img src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
+                        <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
                         <br />
                     </div>
                 </section>
@@ -100,6 +100,7 @@ const NewDevice = () => {
                         <input type="text" className="input" id="client" placeholder="Nombre Cliente" />
                         <input type="text" className="input" id="port" placeholder="Puerto" />
                     </div>
+                    <br />
                     <button className="btn-todo" id="agregar" onClick={test} >Agregar</button>
                 </div>
 
