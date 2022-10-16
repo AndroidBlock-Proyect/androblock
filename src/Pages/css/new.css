@@ -80,16 +80,16 @@ input:focus {
     height: 60px;
     justify-content: space-evenly;
     align-items: center;
-    border-bottom: 2px solid #1c70b1;
+    border-bottom: 2px solid #123668;
 }
 
 
 .btn-todo{
+    transition: .2s ease-out all;
     height: 40px;
     width: 90px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-	background-color: #1c70b1;
+	background-color: #123668;
     border-radius: .4rem;
     color: #ffff
-    
 }
