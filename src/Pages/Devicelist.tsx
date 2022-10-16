@@ -1,17 +1,56 @@
+import { getValue } from "@testing-library/user-event/dist/utils";
 import { listenerCount } from "process";
 import React, { useEffect, useState } from "react";
 import "./css/list.css"
 
 const DeviceList = () => {
-  /*  var i = 0;
-    var list  = localStorage.getItem("devicedata");
-    function getDeviceList() {
-        var x =  document.getElementById('id') as HTMLInputElement | null;
-        for (var i = 0; i < 10; i++){
-            x?.setAttribute = list[i];
-        }
-    }
-*/
+
+    /*
+        <div className="list-container">
+            <div className="card device-form">
+                <div className="card-device">
+                    <h1 className="card-list text-center">Dispositivos</h1>
+                    <div className="container_list_1">
+                        <p className="actividad">Equipos</p>
+                        <input type="checkbox" id="id" className="casilla" />
+                        <a ></a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    */
+
+    // create element with TS
+
+    const list_container = document.createElement("div");
+    const Devicelist = document.createElement("div");
+    const device = document.createElement("div");
+    const list_Title = document.createElement("h1");
+    const container_list = document.createElement("div");
+    const equipo = document.createElement("p");
+    const equipocheck = document.createElement("input");
+    const a = document.createElement("a");
+
+    // adding atributes
+
+    list_Title.innerHTML = "Dispositivos";
+    list_container.classList.add("device-list");
+    Devicelist.classList.add("device-form");
+    device.classList.add("card-device");
+    container_list.classList.add("container_list_1");
+    equipo.innerHTML = "valor del dispositivo";
+    equipo.classList.add("actividdad");
+    equipocheck.classList.add("casilla");
+    equipocheck.setAttribute("type", "checkbox");
+
+    // mostramos todos los campos de dispositivos para la lista
+    list_container.appendChild(list_Title);
+    list_container.appendChild(Devicelist);
+    Devicelist.appendChild(device);
+    device.appendChild(container_list);
+    container_list.appendChild(equipo);
+    container_list.appendChild(equipocheck);
+
     return (
 
         <div>
@@ -36,19 +75,6 @@ const DeviceList = () => {
             </header>
 
             <body>
-
-                <div className="list-container">
-                    <div className="card device-form">
-                        <div className="card-device">
-                            <h1 className="card-list text-center">Dispositivos</h1>
-                            <div className="container-list-1">
-                                <input type="checkbox" className="casilla" />
-                                <p className="actividad">Equipos</p>
-                                <a id="id"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </body>
 
