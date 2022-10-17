@@ -23,7 +23,7 @@ const Tools = () => {
             <header>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-                <nav>
+                <nav className="navbar">
                     <a href="/">Home</a>
                     <a href="/Devicelist">Dispositivo</a>
                     <a href="/Newdevice">Nuevo Disposivo</a>
@@ -39,7 +39,6 @@ const Tools = () => {
             </header>
 
             <body>
-
                 <div className="tool-container">
                     <div className="tool-card">
                         <div className="left-column background1-left-column">
