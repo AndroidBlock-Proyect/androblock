@@ -60,8 +60,8 @@ const DeviceList = () => {
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
                 <nav className="navbar">
                     <a href="/">Home</a>
-                    <a href="/tools">Herramientas</a>
                     <a href="/Newdevice">Nuevo Dispositivo</a>
+                    <a href="/tools">Herramientas</a>
                 </nav>
                 <br />
                 <br />
@@ -74,10 +74,6 @@ const DeviceList = () => {
                     <br />
                 </section>
             </header>
-
-            <body>
-
-            </body>
 
         </div>
     )
