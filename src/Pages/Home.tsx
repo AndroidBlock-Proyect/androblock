@@ -36,7 +36,6 @@ export default function Home() {
     return (
 
         <div>
-
             <header>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
@@ -53,8 +52,8 @@ export default function Home() {
                     </div>
                 </section>
             </header>
-
-            <div className="global-container">
+                {/*
+                <div className="global-container">
                     <div className="card login-form">
                         <div className="card-body">
                             <h1 className="card-title text-center">Acceso AB</h1>
@@ -77,7 +76,25 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            
+                */}
+
+            <section className="form-main">
+                <div className="form-content">
+                    <div className="box">
+                        <h3>Bienvenido</h3>
+                        <form action="">
+                            <div className="input-box">
+                                <input type="text" placeholder="Email" className="input-control" />
+                            </div>
+                            <div className="input-box">
+                                <input type="password" placeholder="Contraseña" className="input-control" />
+                            </div>
+                            <button type="submit" className="btn">Acceder</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
         </div>
     )
 }

@@ -84,8 +84,7 @@ header .textosheader{
     font-family: "Roboto", sans-serif;
 }
 
-/**********************************/
-
+/***************************
 .global-container{
     height: 70%;
     display: flex;
@@ -140,6 +139,91 @@ input[type="password"]:focus{
     padding-top: 25px;
 }
 
+*********************/
 
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
+
+:root{
+    --green: hsl(162, 45%,56%);
+    --lead: hsl(162, 2%, 56%);
+    --blue: hsl(220, 85%, 57%);
+    --violet: hsl(272, 92%, 32%);
+    --tex-white: hsl(0, 0%, 100%);
+    --text-ligth-gray: hsl(0, 0%, 98%);
+    --body-bg-color: hsl(200, 54%, 12%);
+    --glass-bg-color: hsla(0, 0%, 100%, 0.05);
+    --boder-color: hsla(0, 0%, 100%, 0.25);
+    --blur: blur(10px);
+    --button-hover-color: hsla(0, 0%, 0%, 0.3);
+}
+
+.form-main{
+    min-height: 100vh;
+    padding: 60px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content{
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 1;
+}
+
+.form-content .box{
+    border-color: var(--glass-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 40px 50px;
+    border-radius: 20px;
+    backdrop-filter: var(--blur);
+    color: #fff;
+    background-color: #000;
+}
+
+.form-content h3{
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.2;
+    color: var(--tex-white);
+    font-weight: 500;
+}
+
+.form-content form{
+    margin: 25px 0 20px;
+}
+
+.form-content .input-box{
+    margin: 25px;
+}
+
+.form-content .input-control{
+    display: block;
+    height: 45px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    color: inherit;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.form-content .input-control:focus{
+    outline: none;
+}
+
+.form-content .btn{
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 25px;
+    user-select: none;
+}
 
 
