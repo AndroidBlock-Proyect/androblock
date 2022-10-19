@@ -40,7 +40,8 @@ export default function Home() {
             <header>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-                <br />
+                <br/>
+                <br/>
                 <section className="textosheader">
                     <div className="textosheader">
                         <h1>
@@ -53,8 +54,7 @@ export default function Home() {
                 </section>
             </header>
 
-            <body>
-                <div className="global-container">
+            <div className="global-container">
                     <div className="card login-form">
                         <div className="card-body">
                             <h1 className="card-title text-center">Acceso AB</h1>
@@ -73,15 +73,11 @@ export default function Home() {
                                 <button id="submit" className="btn btn-primary btn-block" onClick={verificacion}>
                                     Acceder
                                 </button>
-
                             </form>
                         </div>
                     </div>
                 </div>
-
-            </body>
-
-
+            
         </div>
     )
 }

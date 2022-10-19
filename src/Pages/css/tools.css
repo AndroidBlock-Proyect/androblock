@@ -30,7 +30,7 @@ body {
 .tool-container{
 	display: flex;
 	justify-content: center;
-	height: 60vh;
+	height: 55vh;
     align-items: center;
 }
 
@@ -42,7 +42,7 @@ body {
 	margin: 1.5rem;
 	overflow: hidden;
 	width: 48rem;
-	height: 32rem;
+	height: 28rem;
 }
 
 .tool-card h6 {

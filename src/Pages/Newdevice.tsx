@@ -92,8 +92,6 @@ const NewDevice = () => {
                 </section>
             </header>
 
-            <body>
-
                 <div className="list roundBorder">
                     <h4 className="titulo">Nuevo Dispositivo</h4>
                     <br />
@@ -104,9 +102,9 @@ const NewDevice = () => {
                     <br />
                     <button className="btn-todo" id="agregar" onClick={test} >Agregar</button>
                 </div>
-
-            </body>
-
+            <br/>
+            <br/>
+            <br/>
         </div>
     )
 }
