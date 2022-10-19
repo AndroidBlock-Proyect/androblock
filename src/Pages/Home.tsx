@@ -52,6 +52,24 @@ export default function Home() {
                     </div>
                 </section>
             </header>
+
+            <section className="form-main">
+                <div className="form-content">
+                    <div className="box">
+                        <h3>Bienvenido</h3>
+                        <form action="">
+                            <div className="input-box">
+                                <input type="text" placeholder="Email" className="input-control" />
+                            </div>
+                            <div className="input-box">
+                                <input type="password" placeholder="Contraseña" className="input-control" />
+                            </div>
+                            <button type="submit" className="btn">Acceder</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
                 {/*
                 <div className="global-container">
                     <div className="card login-form">
@@ -78,22 +96,7 @@ export default function Home() {
                 </div>
                 */}
 
-            <section className="form-main">
-                <div className="form-content">
-                    <div className="box">
-                        <h3>Bienvenido</h3>
-                        <form action="">
-                            <div className="input-box">
-                                <input type="text" placeholder="Email" className="input-control" />
-                            </div>
-                            <div className="input-box">
-                                <input type="password" placeholder="Contraseña" className="input-control" />
-                            </div>
-                            <button type="submit" className="btn">Acceder</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
+            
 
         </div>
     )

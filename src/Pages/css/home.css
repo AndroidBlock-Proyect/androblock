@@ -158,8 +158,9 @@ input[type="password"]:focus{
 }
 
 .form-main{
-    min-height: 100vh;
-    padding: 60px 15px;
+    min-height: min-content !important;
+    min-width: auto !important;
+    margin-top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,9 +178,8 @@ input[type="password"]:focus{
     border: 1px solid var(--border-color);
     padding: 40px 50px;
     border-radius: 20px;
-    backdrop-filter: var(--blur);
-    color: #fff;
-    background-color: #000;
+    border-color: #fff;
+    background-color: rgba(7, 7, 7, 0.301);
 }
 
 .form-content h3{
