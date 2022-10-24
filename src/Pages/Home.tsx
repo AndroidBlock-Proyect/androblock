@@ -52,48 +52,28 @@ export default function Home() {
                     </div>
                 </section>
             </header>
-                {/*
-                <div className="global-container">
-                    <div className="card login-form">
-                        <div className="card-body">
-                            <h1 className="card-title text-center">Acceso AB</h1>
-                        </div>
-                        <div className="card-text">
-                            <form>
-                                <div className="form-group">
-                                    <label htmlFor="exampleInputUser1">Usuario</label>
-                                    <input type="user" id="user" className="form-control form-control-sm" />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="exampleInputPassword1">Contraseña</label>
-                                    <input type="password" id="pswd" className="form-control form-control-sm" />
-                                </div>
-                                <button id="submit" className="btn btn-primary btn-block" onClick={verificacion}>
-                                    Acceder
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                */}
 
             <section className="form-main">
                 <div className="form-content">
                     <div className="box">
-                        <h3>Bienvenido</h3>
+                        <h3>Inicio AndroidBlock</h3>
                         <form action="">
                             <div className="input-box">
-                                <input type="text" placeholder="Email" className="input-control" />
+                                <input type="text" placeholder="Usuario" className="input-control" />
                             </div>
                             <div className="input-box">
                                 <input type="password" placeholder="Contraseña" className="input-control" />
                             </div>
-                            <button type="submit" className="btn">Acceder</button>
+                            <br />
+                            <br />
+                            <button id="submit" className="btn" onClick={verificacion}>Acceder</button>
                         </form>
                     </div>
                 </div>
             </section>
+            <br/>
+            <br/>
+            <br/>
         </div>
     )
 }
