@@ -3,7 +3,13 @@ import { listenerCount } from "process";
 import React, { useEffect, useState } from "react";
 import "./css/list.css"
 
-const DeviceList = () => {
+/*
+async function DatosGet(url: string) {
+    let datos = await fetch(url).then(res => res.json).then((data => { return data }))
+}*/
+
+function DeviceList() {
+    const [list, setlist] = useState(0)
 
     /*
         <div className="list-container">
@@ -19,37 +25,53 @@ const DeviceList = () => {
             </div>
         </div>  
     */
+    /*
+        let macho = document.getElementById('macho');
+        let fen = document.getElementById('fen');
+    
+        let list = document.getElementById('devls');
+    
+        var array = ['f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm']
+        window.onload = () => {
+            console.log('window.onload');
+            let div = document.createElement('div');
+            array.forEach(g => {
+                let btn = document.createElement('button');
+                if (g === 'f') {
+                    console.log('femenino: ' + g);
+                    btn.innerHTML = (g)
+                }
+                else if (g === 'm') {
+                    console.log('masculino: ' + g);
+                    btn.innerHTML = (g)
+    
+                }
+                list?.appendChild(div);
+                div.appendChild(btn);
+    
+            });
+        }*/
+    //window.onerror = () => {
 
-    // create element with TS
+    useEffect(() => {
+        const el = document.createElement('div');
 
-    const list_container = document.createElement("div");
-    const Devicelist = document.createElement("div");
-    const device = document.createElement("div");
-    const list_Title = document.createElement("h1");
-    const container_list = document.createElement("div");
-    const equipo = document.createElement("p");
-    const equipocheck = document.createElement("input");
-    const a = document.createElement("a");
+        var lc = document.getElementById('listcontainer')
+        var array = ['klk','f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f']
 
-    // adding atributes
+        array.forEach(list => {
+            //let p = document.createElement('p');'
+            console.log(list);
+            el.innerHTML = list;
+            el.style.backgroundColor = 'salmon';
+            el.style.color = 'white';
 
-    list_Title.innerHTML = "Dispositivos";
-    list_container.classList.add("device-list");
-    Devicelist.classList.add("device-form");
-    device.classList.add("card-device");
-    container_list.classList.add("container_list_1");
-    equipo.innerHTML = "valor del dispositivo";
-    equipo.classList.add("actividdad");
-    equipocheck.classList.add("casilla");
-    equipocheck.setAttribute("type", "checkbox");
+            lc?.appendChild(el);
 
-    // mostramos todos los campos de dispositivos para la lista
-    list_container.appendChild(list_Title);
-    list_container.appendChild(Devicelist);
-    Devicelist.appendChild(device);
-    device.appendChild(container_list);
-    container_list.appendChild(equipo);
-    container_list.appendChild(equipocheck);
+        });
+    })
+
+
 
     return (
 
@@ -74,6 +96,19 @@ const DeviceList = () => {
                     <br />
                 </section>
             </header>
+
+            <body>
+                <div className="list-container">
+                    <div className="card device-form">
+                        <div className="card-device">
+                            <h1 className="card-list text-center">Dispositivos</h1>
+                            <div id='listcontainer'>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
 
         </div>
     )

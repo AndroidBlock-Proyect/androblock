@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { WebSocket } from "ws";
 import { connec, messages } from "../services/server"
-import { setport } from './res/imports';
 import "./css/new.css"
 
 const NewDevice = () => {
@@ -17,10 +16,8 @@ const NewDevice = () => {
     var msg = "New device connected to port " + devport?.value;
     var duration;
 
-    var client = cliente?.value;
-
     function agregar() {
-        localStorage.setItem(client, JSON.stringify(devport?.value));
+        localStorage.setItem('client', JSON.stringify(cliente?.value));
     }
 
     function test() {
@@ -48,7 +45,7 @@ const NewDevice = () => {
         console.log(localStorage.getItem("port" + "cliente"));
 
         do {
-
+            
         }
         while (1 == 1) {
             console.log("Connected to port " + devport?.value);
@@ -61,7 +58,6 @@ const NewDevice = () => {
     function savedata() {
         useEffect(() => {
             localStorage.setItem("devicedata", JSON.stringify("port:" + devport?.value + ";" + "cliente:" + cliente?.value + ";"));
-
         }, [devicedata]);
     }*/
 
@@ -92,19 +88,19 @@ const NewDevice = () => {
                 </section>
             </header>
 
-                <div className="list roundBorder">
-                    <h4 className="titulo">Nuevo Dispositivo</h4>
-                    <br />
-                    <div className="container-input">
-                        <input type="text" className="input" id="client" placeholder="Nombre Usuario" />
-                        <input type="text" className="input" id="port" placeholder="Puerto" />
-                    </div>
-                    <br />
-                    <button className="btn-todo" id="agregar" onClick={test} >Agregar</button>
+            <div className="list roundBorder">
+                <h4 className="titulo">Nuevo Dispositivo</h4>
+                <br />
+                <div className="container-input">
+                    <input type="text" className="input" id="client" placeholder="Nombre Usuario" />
+                    <input type="text" className="input" id="port" placeholder="Puerto" />
                 </div>
-            <br/>
-            <br/>
-            <br/>
+                <br />
+                <button className="btn-todo" id="agregar" onClick={test} >Agregar</button>
+            </div>
+            <br />
+            <br />
+            <br />
         </div>
     )
 }
