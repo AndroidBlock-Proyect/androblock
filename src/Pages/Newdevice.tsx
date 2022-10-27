@@ -17,7 +17,9 @@ const NewDevice = () => {
     var duration;
 
     function agregar() {
-        localStorage.setItem('client', JSON.stringify(cliente?.value));
+        localStorage.setItem('clie', JSON.stringify(cliente.value));
+        console.log(localStorage.getItem('clie'))
+
     }
 
     function test() {
@@ -61,6 +63,8 @@ const NewDevice = () => {
         }, [devicedata]);
     }*/
 
+
+
     return (
 
         <div>
@@ -71,7 +75,7 @@ const NewDevice = () => {
                 <nav className="navbar">
                     <a href="/">Home</a>
                     <a href="/Devicelist">Dispositivos</a>
-                    <a href="/tools">Herramientas</a>
+                    {/*<a href="/tools">Herramientas</a>*/}
                 </nav>
                 <br />
                 <br />

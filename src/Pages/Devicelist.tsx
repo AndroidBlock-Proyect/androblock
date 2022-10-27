@@ -1,6 +1,7 @@
 import { getValue } from "@testing-library/user-event/dist/utils";
 import { listenerCount } from "process";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./css/list.css"
 
 /*
@@ -54,23 +55,69 @@ function DeviceList() {
     //window.onerror = () => {
 
     useEffect(() => {
-        const el = document.createElement('div');
 
-        var lc = document.getElementById('listcontainer')
-        var array = ['klk','f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f', 'm', 'f']
+        var identidication;
 
-        array.forEach(list => {
-            //let p = document.createElement('p');'
-            console.log(list);
-            el.innerHTML = list;
-            el.style.backgroundColor = 'white';
-            el.style.color = 'black';
-            el.style.fontSize = '18px';
+        var el = document.createElement('tr');
+        
 
-            lc?.appendChild(el);
+        var lc = document.getElementById('tabla')
+        var array = ['a', 'f', 'm', 'j', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'b', 'c', 'd', 'e', 'g', 'h']
 
-        });
+        var list = array.length
+
+        var clien = localStorage.getItem('clie')
+
+        console.log(localStorage.getItem('clie'))
+
+        el.style.backgroundColor = 'white';
+        el.style.color = 'black';
+        el.style.fontSize = '18px';
+
+        array.forEach(fill_table)
+
+        function fill_table() {
+            for (var i = 0; i < 22; i++) {
+                var orden = document.createElement('td') as HTMLElement;
+                var cliente = document.createElement('td') as HTMLElement;
+                var accion = document.createElement('td') as HTMLElement;
+                var btn = document.createElement('Button');
+                
+                console.log(list);
+                orden.innerHTML = (list - 1).toString()
+                cliente.innerHTML = "hola " + clien?.toString()
+
+
+                btn.id = array[i++]
+                btn.style.backgroundColor = 'aliceblue';
+                btn.innerHTML = 'seleccionar'
+
+                btn.onclick = print
+
+                accion.appendChild(btn)
+
+                el?.appendChild(orden)
+                el?.appendChild(cliente)
+                el?.appendChild(accion)
+
+                lc?.appendChild(el);
+            }
+            function print() {
+                handleBack()
+                console.log(btn.id);
+                //return btn.id;
+            }
+        }
     })
+    let navigate = useNavigate();
+    const handleBack = () => {
+        navigate('/tools');
+    };
+
+
+
+
+
 
 
     return (
@@ -83,7 +130,7 @@ function DeviceList() {
                 <nav className="navbar">
                     <a href="/">Home</a>
                     <a href="/Newdevice">Nuevo Dispositivo</a>
-                    <a href="/tools">Herramientas</a>
+                    {/*<a href="/tools">Herramientas</a>*/}
                 </nav>
                 <br />
                 <br />
@@ -103,14 +150,20 @@ function DeviceList() {
                         <h1 className="card-list text-center">Dispositivos</h1>
                         <br />
                         <div id='listcontainer'>
-
+                            <table id="tabla">
+                                <tr>
+                                    <th>orden</th>
+                                    <th>cliente</th>
+                                    <th>accion</th>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
             <br />
             <br />
-            
+
         </div>
     )
 }

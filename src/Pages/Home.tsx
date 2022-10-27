@@ -12,8 +12,8 @@ export default function Home() {
     var pass = document.getElementById("pswd") as HTMLInputElement;
     var ok = document.getElementById("submit");
 
-    const password = pass?.value;
-    const usr = usuario?.value;
+    const password = '1234';
+    const usr = 'Adm';
 
     let navigate = useNavigate();
     const handleBack = () => {
@@ -23,7 +23,7 @@ export default function Home() {
     //ok?.addEventListener('click', verificacion)
 
     function verificacion() {
-        if (usuario?.value === usr && pass?.value === usr) {
+        if (usuario?.value == usr && pass?.value == password) {
             handleBack();
         }
 
@@ -39,8 +39,8 @@ export default function Home() {
             <header>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <section className="textosheader">
                     <div className="textosheader">
                         <h1>
@@ -59,10 +59,10 @@ export default function Home() {
                         <h3>Inicio AndroidBlock</h3>
                         <form action="">
                             <div className="input-box">
-                                <input type="text" placeholder="Usuario" className="input-control" />
+                                <input id="user" type="text" placeholder="Usuario" className="input-control" />
                             </div>
                             <div className="input-box">
-                                <input type="password" placeholder="Contraseña" className="input-control" />
+                                <input id="pswd" type="password" placeholder="Contraseña" className="input-control" />
                             </div>
                             <br />
                             <br />
@@ -71,9 +71,9 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <br/>
-            <br/>
-            <br/>
+            <br />
+            <br />
+            <br />
         </div>
     )
 }
