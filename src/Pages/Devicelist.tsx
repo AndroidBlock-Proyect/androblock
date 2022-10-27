@@ -63,14 +63,14 @@ function DeviceList() {
             //let p = document.createElement('p');'
             console.log(list);
             el.innerHTML = list;
-            el.style.backgroundColor = 'salmon';
-            el.style.color = 'white';
+            el.style.backgroundColor = 'white';
+            el.style.color = 'black';
+            el.style.fontSize = '18px';
 
             lc?.appendChild(el);
 
         });
     })
-
 
 
     return (
@@ -97,19 +97,20 @@ function DeviceList() {
                 </section>
             </header>
 
-            <body>
-                <div className="list-container">
-                    <div className="card device-form">
-                        <div className="card-device">
-                            <h1 className="card-list text-center">Dispositivos</h1>
-                            <div id='listcontainer'>
+            <div className="list-container">
+                <div className="device-form">
+                    <div className="card-device">
+                        <h1 className="card-list text-center">Dispositivos</h1>
+                        <br />
+                        <div id='listcontainer'>
 
-                            </div>
                         </div>
                     </div>
                 </div>
-            </body>
-
+            </div>
+            <br />
+            <br />
+            
         </div>
     )
 }
