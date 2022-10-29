@@ -17,96 +17,104 @@ const NewDevice = () => {
     var duration;
 
     function agregar() {
-        localStorage.setItem('clie', JSON.stringify(cliente.value));
-        console.log(localStorage.getItem('clie'))
-
-    }
-
-    function test() {
+        localStorage.setItem('c', JSON.stringify(cliente?.value));
+        localStorage.setItem('port', JSON.stringify(devport?.value));
+        console.log(localStorage.getItem("cliente"))
+        console.log(localStorage.getItem("port"))
         do {
-            try {
-                //aqui va el codigo para probar la coneccion del dispositivo y el  programa 
-                //alert(cliente?.value + " connected to port " + localStorage.getItem(cliente?.value));
-            }
-            catch (e) {
-                console.log(e);
-            }
+            if 
         }
-        while (testresult == true) {
-            agregar();
+        while () {
+
         }
     }
+}
 
-    //var port: number = parseInt(devport?.value, 10);
+function test() {
+    do {
+        try {
+            //aqui va el codigo para probar la coneccion del dispositivo y el  programa 
+            //alert(cliente?.value + " connected to port " + localStorage.getItem(cliente?.value));
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
+    while (testresult == true) {
+        agregar();
+    }
+}
 
-    /*function conect() {
+//var port: number = parseInt(devport?.value, 10);
+
+/*function conect() {
+    console.log("Connected to port " + devport?.value);
+    setport(devport?.value);
+
+    //savedata();
+    console.log(localStorage.getItem("port" + "cliente"));
+
+    do {
+        
+    }
+    while (1 == 1) {
         console.log("Connected to port " + devport?.value);
-        setport(devport?.value);
-
-        //savedata();
-        console.log(localStorage.getItem("port" + "cliente"));
-
-        do {
-            
-        }
-        while (1 == 1) {
-            console.log("Connected to port " + devport?.value);
-            savedata();
-        }
+        savedata();
     }
+}
 
-    //funcion para enviar los datos del telefono al localstorage
+//funcion para enviar los datos del telefono al localstorage
 
-    function savedata() {
-        useEffect(() => {
-            localStorage.setItem("devicedata", JSON.stringify("port:" + devport?.value + ";" + "cliente:" + cliente?.value + ";"));
-        }, [devicedata]);
-    }*/
+function savedata() {
+    useEffect(() => {
+        localStorage.setItem("devicedata", JSON.stringify("port:" + devport?.value + ";" + "cliente:" + cliente?.value + ";"));
+    }, [devicedata]);
+}*/
 
 
 
-    return (
+return (
 
-        <div>
+    <div>
 
-            <header>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-                <nav className="navbar">
-                    <a href="/">Home</a>
-                    <a href="/Devicelist">Dispositivos</a>
-                    {/*<a href="/tools">Herramientas</a>*/}
-                </nav>
-                <br />
-                <br />
-                <section className="textosheader">
-                    <div className="textosheader">
-                        <h1>
-                            AndroidBlock📵
-                        </h1>
-                        <br />
-                        <br />
-                        <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
-                        <br />
-                    </div>
-                </section>
-            </header>
-
-            <div className="list roundBorder">
-                <h4 className="titulo">Nuevo Dispositivo</h4>
-                <br />
-                <div className="container-input">
-                    <input type="text" className="input" id="client" placeholder="Nombre Usuario" />
-                    <input type="text" className="input" id="port" placeholder="Puerto" />
+        <header>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+            <nav className="navbar">
+                <a href="/">Home</a>
+                <a href="/Devicelist">Dispositivos</a>
+                {/*<a href="/tools">Herramientas</a>*/}
+            </nav>
+            <br />
+            <br />
+            <section className="textosheader">
+                <div className="textosheader">
+                    <h1>
+                        AndroidBlock📵
+                    </h1>
+                    <br />
+                    <br />
+                    <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
+                    <br />
                 </div>
-                <br />
-                <button className="btn-todo" id="agregar" onClick={test} >Agregar</button>
+            </section>
+        </header>
+
+        <div className="list roundBorder">
+            <h4 className="titulo">Nuevo Dispositivo</h4>
+            <br />
+            <div className="container-input">
+                <input type="text" className="input" id="client" placeholder="Nombre Usuario" />
+                <input type="text" className="input" id="port" placeholder="Puerto" />
             </div>
             <br />
-            <br />
-            <br />
+            <button className="btn-todo" id="agregar" onClick={test} >Agregar</button>
         </div>
-    )
+        <br />
+        <br />
+        <br />
+    </div>
+)
 }
 
 export default NewDevice;

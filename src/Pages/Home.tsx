@@ -8,12 +8,14 @@ import { Router } from "react-router-dom";
 
 export default function Home() {
 
+    var tokenhistory;
+
     var usuario = document.getElementById("user") as HTMLInputElement;
     var pass = document.getElementById("pswd") as HTMLInputElement;
     var ok = document.getElementById("submit");
 
-    const password = '1234';
-    const usr = 'Adm';
+    //const pswd = '1234';
+    //const usr = 'Adm';
 
     let navigate = useNavigate();
     const handleBack = () => {
@@ -23,12 +25,15 @@ export default function Home() {
     //ok?.addEventListener('click', verificacion)
 
     function verificacion() {
-        if (usuario?.value == usr && pass?.value == password) {
+        if (usuario?.value === '' && pass?.value === '') {
+
+            tokenhistory = Math.random().toString().substring(2)
+            console.log(tokenhistory);
             handleBack();
         }
 
         else {
-            alert("no funciona" + usuario?.value + pass?.value);
+            alert("no funciona " + usuario?.value + " "+ pass?.value);
         }
     }
 
