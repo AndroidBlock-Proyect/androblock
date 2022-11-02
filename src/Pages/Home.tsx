@@ -7,7 +7,10 @@ import { Router } from "react-router-dom";
 
 
 export default function Home() {
+    
+    const handlekeyboard = (event: KeyboardEvent) => {
 
+    }
     var tokenhistory;
 
     var usuario = document.getElementById("user") as HTMLInputElement;
@@ -22,18 +25,21 @@ export default function Home() {
         navigate('devicelist');
     };
 
+
+    var usr = usuario?.value;
+    var pswd = pass?.value;
+
     //ok?.addEventListener('click', verificacion)
 
     function verificacion() {
-        if (usuario?.value === '' && pass?.value === '') {
-
+        if (usr === 'adm' && pswd === 'adm') {
             tokenhistory = Math.random().toString().substring(2)
             console.log(tokenhistory);
             handleBack();
         }
 
         else {
-            alert("no funciona " + usuario?.value + " "+ pass?.value);
+            alert("no funciona " + usr + " " + pswd);
         }
     }
 
