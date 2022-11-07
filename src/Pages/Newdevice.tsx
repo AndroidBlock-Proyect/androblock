@@ -3,123 +3,134 @@ import { WebSocket } from "ws";
 import { connec, messages } from "../services/server"
 import "./css/new.css"
 
-const NewDevice = () => {
+type State = {
+    nombre: String,
+    Puerto: Number,
+}
+export default class NewDevice extends React.Component {
 
-    //const [devicedata] = useState([]);
-
-    var devport = document.getElementById("port") as HTMLInputElement;
-    var cliente = document.getElementById("client") as HTMLInputElement;
-    //var agregar = document.getElementById("agregar");
-
-    var testresult = false;
-
-    var msg = "New device connected to port " + devport?.value;
-    var duration;
-
-    function agregar() {
-        localStorage.setItem('clie', JSON.stringify(cliente.value));
-        console.log(localStorage.getItem('clie'))
-
+    state = {
+        nombre: "",
+        Puerto: "",
     }
 
-    function test() {
-        do {
-            try {
-                //aqui va el codigo para probar la coneccion del dispositivo y el  programa 
-                //alert(cliente?.value + " connected to port " + localStorage.getItem(cliente?.value));
+
+    onport = (p: React.FormEvent<HTMLInputElement>): void => {
+        this.setState({ Puerto: p.currentTarget.value });
+    }
+
+    onname = (n: React.FormEvent<HTMLInputElement>): void => {
+        this.setState({ nombre: n.currentTarget.value });
+    }
+
+    render(): React.ReactNode {
+        var name = this.state.nombre.toString();
+        var port = this.state.Puerto.toString();
+        //var resultado = false
+        //var message = ""
+
+        var arr = [['nombre', 'puerto'], []];
+
+
+        function adddevice() {
+
+            localStorage.setItem('cliente', JSON.stringify(name));
+
+
+
+            /*for (var i = 0; i < arr.length; i++) {
+                if (arr[0][i] == null || arr[1][i] == null) {
+                    arr[0][i] = name;
+                    arr[1][i] = port;
+                    console.log(arr[0][i] + ":  :" + arr[1][i]);
+                    alert("todos son null" + ": se estaran agregando los siguientes elementos:  " + " nombre:" + name + "  puerto: " + port)
+                }
+            }*/
+            //testdevice(resultado);
+            //adding(resultado)
+
+        }
+
+        /*
+    
+        function testdevice(resultado: boolean) {
+            //test the device
+            for (var i = 0; i < 30; i++) {
+                if (i == 23) {
+                    console.log(i, resultado);
+                    return resultado = true
+    
+                }
+                else {
+                    console.log(i, resultado);
+                }
             }
-            catch (e) {
-                console.log(e);
+        }
+    
+        function adding(resultado: boolean) {
+            if (resultado === true) {
+                alert(" el dispositivo ha dicho!" + message);
+            }
+            else {
+                alert(" el dispositivo no ha respondido revise los datos ingresado");
             }
         }
-        while (testresult == true) {
-            agregar();
-        }
-    }
+    */
 
-    //var port: number = parseInt(devport?.value, 10);
+        return (
+            <div>
+                <header>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+                    <nav className="navbar">
+                        <a href="/">Home</a>
+                        <a href="/Devicelist">Dispositivos</a>
+                        {/*<a href="/tools">Herramientas</a>*/}
+                    </nav>
+                    <br />
+                    <br />
+                    <section className="textosheader">
+                        <div className="textosheader">
+                            <h1>
+                                AndroidBlock📵
+                            </h1>
+                            <br />
+                            <br />
+                            <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
+                            <br />
+                        </div>
+                    </section>
+                </header>
 
-    /*function conect() {
-        console.log("Connected to port " + devport?.value);
-        setport(devport?.value);
-
-        //savedata();
-        console.log(localStorage.getItem("port" + "cliente"));
-
-        do {
-            
-        }
-        while (1 == 1) {
-            console.log("Connected to port " + devport?.value);
-            savedata();
-        }
-    }
-
-    //funcion para enviar los datos del telefono al localstorage
-
-    function savedata() {
-        useEffect(() => {
-            localStorage.setItem("devicedata", JSON.stringify("port:" + devport?.value + ";" + "cliente:" + cliente?.value + ";"));
-        }, [devicedata]);
-    }*/
-
-
-
-    return (
-
-        <div>
-
-            <header>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-                <nav className="navbar">
-                    <a href="/">Home</a>
-                    <a href="/Devicelist">Dispositivos</a>
-                    {/*<a href="/tools">Herramientas</a>*/}
-                </nav>
-                <br />
-                <br />
-                <section className="textosheader">
-                    <div className="textosheader">
-                        <h1>
-                            AndroidBlock📵
-                        </h1>
-                        <br />
-                        <br />
-                        <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
-                        <br />
+                <div className="list roundBorder">
+                    <h4 className="titulo">Nuevo Dispositivo</h4>
+                    <br />
+                    <div className="container-input">
+                        <input
+                            type="text"
+                            className="input"
+                            id="client"
+                            placeholder="Nombre Usuario"
+                            value={this.state.nombre}
+                            onChange={this.onname}
+                        />*
+                        <input
+                            type="text"
+                            className="input"
+                            id="port"
+                            placeholder="Puerto"
+                            value={this.state.Puerto}
+                            onChange={this.onport}
+                        />
                     </div>
-                </section>
-            </header>
-
-            <div className="list roundBorder">
-                <h4 className="titulo">Nuevo Dispositivo</h4>
-                <br />
-                <div className="container-input">
-                    <input type="text" className="input" id="client" placeholder="Nombre Usuario" />
-                    <input type="text" className="input" id="port" placeholder="Puerto" />
+                    <br />
+                    <button className="btn-todo" id="agregar" onClick={adddevice} >Agregar</button>
                 </div>
                 <br />
-                <button className="btn-todo" id="agregar" onClick={test} >Agregar</button>
+                <br />
+                <br />
             </div>
-            <br />
-            <br />
-            <br />
-        </div>
-    )
+        )
+    }
 }
 
-export default NewDevice;
-
-
-/*
-    //alert to show connecting 
-    function tempalert(msg: string | undefined, duration: number | undefined) {
-        var el = document.getElementById("div");
-        el?.setAttribute("style", "position:absolute; top:40%; left20%; bacckground-color:white;");
-        setTimeout(function () {
-            el?.parentNode?.removeChild(el);
-        }, duration);
-        //document.body.appendChild(el)
-    }
- */

@@ -12,6 +12,18 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+#listcontainer{
+    width: 100%;
+}
 
+table{
+    width: 100%;
+}
+
+tr{
+    width: 100%;
+    text-align: center;
+
+}
 
 

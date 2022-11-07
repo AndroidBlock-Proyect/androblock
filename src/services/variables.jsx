@@ -1,4 +1,9 @@
+var 
 
-export function getdevicainfo(devicainfo){
+export function getdeviceinfo(deviceinfo){
+
+}
+
+export function gettokens(tokenhistory){
 
 }

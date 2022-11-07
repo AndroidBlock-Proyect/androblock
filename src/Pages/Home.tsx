@@ -1,79 +1,110 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import "./css/home.css"
-import DeviceList from "./Devicelist";
 import { useNavigate } from "react-router-dom";
-import { Router } from "react-router-dom";
 
 
+type State = {
+    email: string;
+    password: string;
+};
 
-export default function Home() {
 
-    var usuario = document.getElementById("user") as HTMLInputElement;
-    var pass = document.getElementById("pswd") as HTMLInputElement;
-    var ok = document.getElementById("submit");
+var navigate = useNavigate()
+const handleBack = () => {
+    navigate('devicelist');
+};
 
-    const password = '1234';
-    const usr = 'Adm';
 
-    let navigate = useNavigate();
-    const handleBack = () => {
-        navigate('devicelist');
+export default class Home extends React.Component {
+
+    state = {
+        email: "",
+        password: "",
     };
 
-    //ok?.addEventListener('click', verificacion)
+    // typing on RIGHT hand side of =
+    onemail = (e: React.FormEvent<HTMLInputElement>): void => {
+        this.setState({ email: e.currentTarget.value, });
+    };
 
-    function verificacion() {
-        if (usuario?.value == usr && pass?.value == password) {
-            handleBack();
+    // typing on RIGHT hand side of =
+    onpass = (h: React.FormEvent<HTMLInputElement>): void => {
+        this.setState({ password: h.currentTarget.value, });
+    };
+
+    render(): JSX.Element {
+        //let navigate = useNavigate();
+
+        const auth = () => {
+            let usr = this.state.email.toString()
+            let psw = this.state.password.toString()
+
+            if (usr == "admin" && psw == "Admin") {
+                alert("Login correcto!");
+                handleBack();
+            }
+            else {
+                alert("Please enter the correct user name or password ");
+            }
+            //alert(this.state.email + ":" + this.state.password + ":" + usr)
         }
 
-        else {
-            alert("no funciona" + usuario?.value + pass?.value);
-        }
-    }
 
+        return (
 
-    return (
+            <div>
+                <header>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+                    <br />
+                    <br />
+                    <section className="textosheader">
+                        <div className="textosheader">
+                            <h1>
+                                AndroidBlock📵
+                            </h1>
+                            <br />
+                            <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
+                            <br />
+                        </div>
+                    </section>
+                </header>
 
-        <div>
-            <header>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-                <br />
-                <br />
-                <section className="textosheader">
-                    <div className="textosheader">
-                        <h1>
-                            AndroidBlock📵
-                        </h1>
-                        <br />
-                        <img className="banner-icon" src="https://www.comocrearunapaginaweb.com.mx/wp-content/uploads/2022/06/Banner-en-Android_10424.png" alt="" />
-                        <br />
+                <section className="form-main">
+                    <div className="form-content">
+                        <div className="box">
+                            <h3>Inicio AndroidBlock</h3>
+                            <form >
+                                <div className="input-box">
+                                    <input
+                                        id="Usuario"
+                                        type="text"
+                                        placeholder="Usuario"
+                                        className="input-control"
+                                        value={this.state.email}
+                                        onChange={this.onemail} />
+                                </div>
+                                <div className="input-box">
+                                    <input
+                                        id=" Contrasena"
+                                        type="password"
+                                        placeholder="Contraseña"
+                                        className="input-control"
+                                        value={this.state.password}
+                                        onChange={this.onpass} />
+                                </div>
+                                <br />
+                                <br />
+                                <button id="submit" onClick={auth} className="btn">Acceder</button>
+                            </form>
+                        </div>
                     </div>
                 </section>
-            </header>
-
-            <section className="form-main">
-                <div className="form-content">
-                    <div className="box">
-                        <h3>Inicio AndroidBlock</h3>
-                        <form action="">
-                            <div className="input-box">
-                                <input id="user" type="text" placeholder="Usuario" className="input-control" />
-                            </div>
-                            <div className="input-box">
-                                <input id="pswd" type="password" placeholder="Contraseña" className="input-control" />
-                            </div>
-                            <br />
-                            <br />
-                            <button id="submit" className="btn" onClick={verificacion}>Acceder</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <br />
-            <br />
-            <br />
-        </div>
-    )
+                <br />
+                <br />
+                <br />
+            </div>
+        )
+    }
 }
