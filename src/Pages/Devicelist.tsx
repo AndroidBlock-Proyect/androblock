@@ -116,10 +116,6 @@ function DeviceList() {
 
 
 
-
-
-
-
     return (
 
         <div>
