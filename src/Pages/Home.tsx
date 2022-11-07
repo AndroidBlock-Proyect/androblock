@@ -1,7 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import { link } from "fs";
 import React from "react";
 import "./css/home.css"
-import { useNavigate } from "react-router-dom";
+import DeviceList from "./Devicelist";
+
+//navigation utils 
+import { redirect } from "react-router-dom";
 
 
 type State = {
@@ -9,14 +13,8 @@ type State = {
     password: string;
 };
 
-
-var navigate = useNavigate()
-const handleBack = () => {
-    navigate('devicelist');
-};
-
-
 export default class Home extends React.Component {
+
 
     state = {
         email: "",
@@ -34,7 +32,6 @@ export default class Home extends React.Component {
     };
 
     render(): JSX.Element {
-        //let navigate = useNavigate();
 
         const auth = () => {
             let usr = this.state.email.toString()
@@ -42,7 +39,9 @@ export default class Home extends React.Component {
 
             if (usr == "admin" && psw == "Admin") {
                 alert("Login correcto!");
-                handleBack();
+                //setTimeout(function nav() {
+                return location
+                // }, 5000)
             }
             else {
                 alert("Please enter the correct user name or password ");
@@ -50,6 +49,10 @@ export default class Home extends React.Component {
             //alert(this.state.email + ":" + this.state.password + ":" + usr)
         }
 
+        const location = {
+            pathname: '/Devicelist',
+            state: { fromDashboard: true }
+        }
 
         return (
 
