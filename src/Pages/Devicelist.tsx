@@ -84,6 +84,11 @@ function DeviceList() {
         navigate('/tools');
     };
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> e6bc5bd98367db7312673175f5f596f2724c271e
     return (
 
         <div>
