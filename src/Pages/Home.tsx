@@ -4,17 +4,12 @@ import React from "react";
 import "./css/home.css"
 import DeviceList from "./Devicelist";
 
-//navigation utils 
-import { redirect } from "react-router-dom";
-
-
 type State = {
     email: string;
     password: string;
 };
 
 export default class Home extends React.Component {
-
 
     state = {
         email: "",
@@ -32,21 +27,31 @@ export default class Home extends React.Component {
     };
 
     render(): JSX.Element {
+        //const navigation = useNavigation();
 
         const auth = () => {
             let usr = this.state.email.toString()
             let psw = this.state.password.toString()
 
             if (usr == "admin" && psw == "Admin") {
-                alert("Login correcto!");
+                //navigation.navigate("DeviceList")
+                if (window.confirm("Login correcto!")) {
+                    window.open("/DeviceList")
+                }
                 //setTimeout(function nav() {
-                return location
+                //let nav = useNavigate;
+                //nav("/DeviceList");
                 // }, 5000)
             }
             else {
                 alert("Please enter the correct user name or password ");
             }
             //alert(this.state.email + ":" + this.state.password + ":" + usr)
+        }
+
+        const handleSubmit = () => {
+            const win: Window = window;
+            win.location = "https://github.com/";
         }
 
         const location = {
