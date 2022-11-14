@@ -2,6 +2,7 @@
 import React from "react";
 import "./css/home.css"
 import { useNavigate } from "react-router-dom";
+import DeviceList from "./Devicelist";
 
 
 type State = {
@@ -9,11 +10,10 @@ type State = {
     password: string;
 };
 
-
-var navigate = useNavigate()
+/*var navigate = useNavigate()
 const handleBack = () => {
     navigate('devicelist');
-};
+};*/
 
 
 export default class Home extends React.Component {
@@ -42,14 +42,14 @@ export default class Home extends React.Component {
 
             if (usr == "admin" && psw == "Admin") {
                 alert("Login correcto!");
-                handleBack();
+                //handleBack();
             }
             else {
                 alert("Please enter the correct user name or password ");
             }
             //alert(this.state.email + ":" + this.state.password + ":" + usr)
         }
-
+        
 
         return (
 
@@ -87,7 +87,7 @@ export default class Home extends React.Component {
                                 </div>
                                 <div className="input-box">
                                     <input
-                                        id=" Contrasena"
+                                        id="Contraseña"
                                         type="password"
                                         placeholder="Contraseña"
                                         className="input-control"
@@ -96,9 +96,11 @@ export default class Home extends React.Component {
                                 </div>
                                 <br />
                                 <br />
-                                <button id="submit" onClick={auth} className="btn">Acceder</button>
+                                <a href="http://localhost:3000/devicelist"></a>
+                                <button id="submit" onClick= {auth} className="btn">Acceder
+                                </button>                          
                             </form>
-                        </div>
+                        </div>                       
                     </div>
                 </section>
                 <br />
