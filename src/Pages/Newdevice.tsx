@@ -1,5 +1,8 @@
+//import { connect } from 'http2';
+import { connect } from 'net';
 import React, { useState, useCallback, useEffect } from 'react';
-import { WebSocket } from "ws";
+import { setTimeout } from 'timers/promises';
+//import { WebSocket } from "ws";
 import { connec, messages } from "../services/server"
 import "./css/new.css"
 
@@ -8,6 +11,7 @@ type State = {
     Puerto: Number,
 }
 export default class NewDevice extends React.Component {
+
 
     state = {
         nombre: "",
@@ -24,20 +28,23 @@ export default class NewDevice extends React.Component {
     }
 
     render(): React.ReactNode {
+        var conn = false;
         var name = this.state.nombre.toString();
         var port = this.state.Puerto.toString();
+        var pot = parseInt(this.state.Puerto)
         //var resultado = false
         //var message = ""
 
         var arr = [['nombre', 'puerto'], []];
-
+        var conectionTimeout
 
         function adddevice() {
-
-            localStorage.setItem('cliente', JSON.stringify(name));
-
-
-
+            //try {
+            testDevice(name, pot);
+            //}
+            //catch (err) {
+            //  alert("no se pudo conectar con el telefono");
+            //}
             /*for (var i = 0; i < arr.length; i++) {
                 if (arr[0][i] == null || arr[1][i] == null) {
                     arr[0][i] = name;
@@ -49,6 +56,12 @@ export default class NewDevice extends React.Component {
             //testdevice(resultado);
             //adding(resultado)
 
+        }
+
+        const testDevice = (nombre: string, puerto: number) => {
+            //var pot = parseInt(this.state.Puerto)
+            console.log("tamoaqui: " + nombre + "  " + puerto)
+            connec(nombre, puerto)
         }
 
         /*
@@ -126,7 +139,6 @@ export default class NewDevice extends React.Component {
                     <br />
                     <button className="btn-todo" id="agregar" onClick={adddevice} >Agregar</button>
                 </div>
-                <br />
                 <br />
                 <br />
             </div>

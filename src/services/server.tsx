@@ -1,25 +1,32 @@
-import { useCallback } from "react";
-import { WebSocketServer } from "ws";
+//import { useCallback } from "react";
+import { WebSocket } from "ws";
 
 //var port: number = parseInt(setport, 10);
 
-const ws = new WebSocketServer();
 
 
-export function connec() {
-  ws.on('connection', (ws) => {
-    ws.on('message', (data) => {
-      console.log('recbiendo mensaje del cliente :' + data);
-    })
-  })
+export function connec(name: string, port: number) {
+  const ws = new WebSocket('ws://localhost:' + port);
+  console.log("aqui tamo");
+
+  ws.on('message', (data) => {
+    if (data !== undefined && data !== null) {
+      alert(' el dispositivo respondio correctamente');
+      console.log("hola")
+      ws.send('el usuario: ' + name + ',  se ha conectado en el puerto: ' + port);
+    }
+    else {
+      alert(" el dispositivo no ha respondido revise los datos ingresado");
+    }
+  });
 }
 
-export function messages(msg: any) {
+export function messages(msg: any, port: number) {
+  const ws = new WebSocket('ws://localhost:' + port);
   ws.on('connection', (ws) => {
     ws.send('klk te habla el servidor! 👌');
   });
 }
-
 export function closeconnection() {
 
 }
