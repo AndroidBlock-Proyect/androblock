@@ -11,11 +11,6 @@ type State = {
     password: string;
 };
 
-/*var navigate = useNavigate()
-const handleBack = () => {
-    navigate('devicelist');
-};*/
-
 
 export default class Home extends React.Component {
 
@@ -44,20 +39,13 @@ export default class Home extends React.Component {
             if (usr == "admin" && psw == "Admin") {
 
                 alert("Login correcto!");
-                //handleBack();
-                //navigation.navigate("DeviceList")
                 if (window.confirm("Login correcto!")) {
                     window.open("/DeviceList")
                 }
-                //setTimeout(function nav() {
-                //let nav = useNavigate;
-                //nav("/DeviceList");
-                // }, 5000)
             }
             else {
                 alert("Please enter the correct user name or password ");
             }
-            //alert(this.state.email + ":" + this.state.password + ":" + usr)
         }
 
 
