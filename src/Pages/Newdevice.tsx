@@ -2,9 +2,11 @@
 import { connect } from 'net';
 import React, { useState, useCallback, useEffect } from 'react';
 import { setTimeout } from 'timers/promises';
-//import { WebSocket } from "ws";
+import { WebSocket } from "ws";
+import useWebSocket from "react-use-websocket";
 import { connec, messages } from "../services/server"
 import "./css/new.css"
+import { ScreenContainer } from 'react-native-screens';
 
 type State = {
     nombre: String,
@@ -27,6 +29,7 @@ export default class NewDevice extends React.Component {
         this.setState({ nombre: n.currentTarget.value });
     }
 
+
     render(): React.ReactNode {
         var conn = false;
         var name = this.state.nombre.toString();
@@ -36,11 +39,10 @@ export default class NewDevice extends React.Component {
         //var message = ""
 
         var arr = [['nombre', 'puerto'], []];
-        var conectionTimeout
 
         function adddevice() {
             //try {
-            testDevice(name, pot);
+            //testDevice(name, pot);
             //}
             //catch (err) {
             //  alert("no se pudo conectar con el telefono");
@@ -55,13 +57,25 @@ export default class NewDevice extends React.Component {
             }*/
             //testdevice(resultado);
             //adding(resultado)
-
         }
 
         const testDevice = (nombre: string, puerto: number) => {
-            //var pot = parseInt(this.state.Puerto)
             console.log("tamoaqui: " + nombre + "  " + puerto)
-            connec(nombre, puerto)
+            const ws = new WebSocket('ws://localhost:' + puerto);
+            console.log("aqui tamo");
+
+            ws.on('message', (data) => {
+                if (data !== undefined && data !== null) {
+                    //alert();
+                    if (window.confirm(' el dispositivo respondio correctamente')) {
+                        localStorage.setItem(nombre, JSON.stringify(nombre + puerto))
+                    }
+                    ws.send('el usuario: ' + nombre + ',  se ha conectado en el puerto: ' + puerto);
+                }
+                else {
+                    alert(" el dispositivo no ha respondido revise los datos ingresado");
+                }
+            });
         }
 
         /*

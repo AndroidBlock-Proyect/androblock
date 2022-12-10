@@ -34,31 +34,14 @@ export default class Home extends React.Component {
             let psw = this.state.password.toString()
 
             if (usr == "admin" && psw == "Admin") {
-                //navigation.navigate("DeviceList")
                 if (window.confirm("Login correcto!")) {
                     window.open("/DeviceList")
                 }
-                //setTimeout(function nav() {
-                //let nav = useNavigate;
-                //nav("/DeviceList");
-                // }, 5000)
             }
             else {
                 alert("Please enter the correct user name or password ");
             }
-            //alert(this.state.email + ":" + this.state.password + ":" + usr)
         }
-
-        const handleSubmit = () => {
-            const win: Window = window;
-            win.location = "https://github.com/";
-        }
-
-        const location = {
-            pathname: '/Devicelist',
-            state: { fromDashboard: true }
-        }
-
         return (
 
             <div>
