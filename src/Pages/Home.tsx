@@ -2,12 +2,15 @@
 import { link } from "fs";
 import React from "react";
 import "./css/home.css"
+import { useNavigate } from "react-router-dom";
 import DeviceList from "./Devicelist";
+
 
 type State = {
     email: string;
     password: string;
 };
+
 
 export default class Home extends React.Component {
 
@@ -34,6 +37,8 @@ export default class Home extends React.Component {
             let psw = this.state.password.toString()
 
             if (usr == "admin" && psw == "Admin") {
+
+                alert("Login correcto!");
                 if (window.confirm("Login correcto!")) {
                     window.open("/DeviceList")
                 }
@@ -42,6 +47,18 @@ export default class Home extends React.Component {
                 alert("Please enter the correct user name or password ");
             }
         }
+
+
+        const handleSubmit = () => {
+            const win: Window = window;
+            win.location = "https://github.com/";
+        }
+
+        const location = {
+            pathname: '/Devicelist',
+            state: { fromDashboard: true }
+        }
+
         return (
 
             <div>
@@ -78,7 +95,7 @@ export default class Home extends React.Component {
                                 </div>
                                 <div className="input-box">
                                     <input
-                                        id=" Contrasena"
+                                        id="Contraseña"
                                         type="password"
                                         placeholder="Contraseña"
                                         className="input-control"
@@ -87,9 +104,11 @@ export default class Home extends React.Component {
                                 </div>
                                 <br />
                                 <br />
-                                <button id="submit" onClick={auth} className="btn">Acceder</button>
+                                <a href="http://localhost:3000/devicelist"></a>
+                                <button id="submit" onClick= {auth} className="btn">Acceder
+                                </button>                          
                             </form>
-                        </div>
+                        </div>                       
                     </div>
                 </section>
                 <br />
